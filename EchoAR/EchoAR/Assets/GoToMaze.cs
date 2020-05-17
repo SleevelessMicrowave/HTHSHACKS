@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class GameTimer : MonoBehaviour
+public class GoToMaze : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(videoLength());
+        StartCoroutine(WaitFiveSeconds());
     }
 
     // Update is called once per frame
@@ -17,9 +17,9 @@ public class GameTimer : MonoBehaviour
         
     }
 
-    IEnumerator videoLength()
+    IEnumerator WaitFiveSeconds()
     {
-        yield return new WaitForSeconds(86);
-        SceneManager.LoadScene("End Screen");
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("shiva");
     }
 }
