@@ -315,6 +315,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: maze
       objectReference: {fileID: 0}
+    - target: {fileID: 5902419001559106108, guid: 5f041f21de8eb264a9e46c2d45bd420b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d6f48f087270e6419acb5a3657a617f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f041f21de8eb264a9e46c2d45bd420b, type: 3}
 --- !u!1 &584220676
