@@ -6,26 +6,44 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour
 {
     public GameObject camera;
+    private float horizVel = 0;
+    private float vertVel = 0;
+    private float zVel = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        zVel = 5f;
+        StartCoroutine(StopMove());
+        //StartCoroutine(StartCamera());
+        while (Time.deltaTime < 5)
+        {
+            transform.Rotate(Vector3.up * (90 * Time.deltaTime));
+        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        camera.transform.position += new Vector3(0, 0, 0.2f);
-        StartCoroutine(WaitThreeSeconds());
+        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, vertVel, zVel);
+        
+
     }
 
     
 
-    IEnumerator WaitThreeSeconds()
+    IEnumerator StopMove()
+    { 
+        yield return new WaitForSeconds(7);
+        zVel = 0;
+    }
+
+    IEnumerator StartCamera()
     {
-        yield return new WaitForSeconds(3);
-        camera.transform.position += new Vector3(0, 0, 0);
+        transform.Rotate(Vector3.up * 90 );
+        yield return new WaitForSeconds(5);
+        transform.Rotate(Vector3.up * 0);
     }
 }
 
